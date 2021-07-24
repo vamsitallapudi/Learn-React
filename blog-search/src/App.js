@@ -24,6 +24,13 @@ class App extends Component {
       string: 'Welcome Vamsi Krishna!'
     };
   }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => this.setState({blogposts: users}));
+  }
+
   render() {
     return (
       <div className="App">
